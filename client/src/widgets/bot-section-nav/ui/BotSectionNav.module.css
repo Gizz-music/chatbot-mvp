@@ -1,0 +1,26 @@
+.nav {
+  display: flex;
+  gap: 0.25rem;
+  margin: 0.5rem 0 0;
+}
+
+.link {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link:hover,
+.active {
+  color: var(--text-h);
+  background: var(--surface-muted);
+}
+
+.active {
+  background: var(--surface);
+  border-color: var(--border);
+}

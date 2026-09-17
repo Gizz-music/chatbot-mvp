@@ -1,0 +1,71 @@
+.page {
+  max-width: 28rem;
+  padding-block: 3rem 4rem;
+}
+
+.kicker {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.title {
+  margin: 0;
+  color: var(--text-h);
+  font-size: 1.35rem;
+}
+
+.amount {
+  margin: 0 0 0.25rem;
+  color: var(--text-h);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.amount span {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.form button {
+  width: 100%;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.error {
+  margin: 0;
+  color: #9b1c1c;
+  font-size: 0.9rem;
+}
+
+.cancel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 2.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-h);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cancel:hover {
+  background: var(--surface-muted);
+}
+
+.note {
+  margin: 0;
+  font-size: 0.8rem;
+}

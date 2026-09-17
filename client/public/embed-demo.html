@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Third-party site — widget demo</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Georgia, "Times New Roman", serif;
+        background: #f4efe6;
+        color: #2c2416;
+      }
+      body {
+        margin: 0;
+        padding: 3rem 1.5rem 6rem;
+        max-width: 40rem;
+      }
+      p {
+        line-height: 1.6;
+      }
+      code {
+        font-family: ui-monospace, monospace;
+        background: #efe6d6;
+        padding: 0.1rem 0.35rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>A regular website</h1>
+    <p>
+      This page is a stand-in for a customer site. The chatbot snippet is the
+      only thing loaded from the product origin.
+    </p>
+    <p>
+      Open it as
+      <code>/embed-demo.html?bot=pk_live_…</code>
+      after adding this host to the bot’s allowed domains (or leaving that list
+      empty).
+    </p>
+    <script>
+      (function () {
+        var key = new URLSearchParams(location.search).get("bot");
+        if (!key) {
+          document.body.insertAdjacentHTML(
+            "beforeend",
+            "<p>Pass a <code>bot</code> query param with the public key.</p>",
+          );
+          return;
+        }
+        var script = document.createElement("script");
+        script.src = "/embed.js";
+        script.async = true;
+        script.dataset.bot = key;
+        document.body.appendChild(script);
+      })();
+    </script>
+  </body>
+</html>

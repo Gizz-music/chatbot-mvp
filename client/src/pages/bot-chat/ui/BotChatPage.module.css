@@ -1,0 +1,22 @@
+.page {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.85rem;
+  min-height: 0;
+}
+
+.page h1 {
+  margin: 0;
+  color: var(--text-h);
+}
+
+.page > :last-child {
+  flex: 1;
+  min-height: 0;
+}
+
+.link {
+  color: var(--accent);
+  font-weight: 600;
+}

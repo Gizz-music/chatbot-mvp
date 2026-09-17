@@ -1,0 +1,25 @@
+project_id = "my-chatbot-mvp"
+
+[edge_runtime]
+# oneshot kills the worker when the HTTP response is sent, which would drop
+# ingest-document's background parse-and-embed work. per_worker keeps it alive
+# for EdgeRuntime.waitUntil().
+policy = "per_worker"
+
+[functions.ingest-document]
+verify_jwt = true
+
+[functions.chat]
+# Dashboard callers send a user JWT. The function verifies it itself so the
+# gateway does not reject a missing token before we can read the body.
+verify_jwt = false
+
+[functions.widget-chat]
+# Third-party sites call this with the anon key. Origin is checked against
+# allowed_domains; a user JWT is optional and only used for owner preview.
+verify_jwt = false
+
+[functions.mock-checkout]
+# Checkout HTML is hosted by the SPA. This function is a JSON API: the browser
+# page is opened without a user JWT, while create/cancel still verify the token.
+verify_jwt = false
