@@ -1,0 +1,26 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  height: min(36rem, 70svh);
+  min-height: 28rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--surface);
+  box-shadow: 0 16px 40px rgba(18, 20, 26, 0.1);
+}
+
+.chat {
+  flex: 1;
+  height: auto;
+  min-height: 0;
+  border: 0;
+  border-radius: 0;
+}
+
+@media (max-width: 720px) {
+  .panel {
+    height: min(32rem, 75svh);
+    min-height: 24rem;
+  }
+}

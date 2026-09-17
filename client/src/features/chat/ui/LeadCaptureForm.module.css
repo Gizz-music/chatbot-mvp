@@ -1,0 +1,29 @@
+.form {
+  padding: 0.7rem 0.9rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.copy {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text);
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) auto;
+  gap: 0.45rem;
+  align-items: end;
+}
+
+.error {
+  margin: 0.45rem 0 0;
+  color: #9b1c1c;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 520px) {
+  .fields {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,83 @@
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 14rem;
+  min-height: 0;
+  padding: 1rem;
+  border-right: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.link {
+  padding: 0.55rem 0.75rem;
+  border-radius: var(--radius-md);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.link:hover,
+.active {
+  color: var(--text-h);
+  background: var(--surface-muted);
+}
+
+.usage {
+  display: grid;
+  gap: 0.3rem;
+  margin-top: auto;
+  padding: 0.85rem 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.usageLabel,
+.planName,
+.limit {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+.usageLabel {
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.usageCount {
+  margin: 0;
+  color: var(--text-h);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.bar {
+  width: 100%;
+  height: 0.45rem;
+  border: 0;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--surface-muted);
+  appearance: none;
+}
+
+.bar::-webkit-progress-bar {
+  background: var(--surface-muted);
+}
+
+.bar::-webkit-progress-value {
+  background: var(--accent);
+}
+
+.bar::-moz-progress-bar {
+  background: var(--accent);
+}
+
+.barFull::-webkit-progress-value,
+.barFull::-moz-progress-bar {
+  background: #c53030;
+}
+
+.upgrade {
+  display: grid;
+  gap: 0.2rem;
+}

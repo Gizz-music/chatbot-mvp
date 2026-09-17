@@ -1,0 +1,80 @@
+.menu {
+  position: relative;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.6rem 0.3rem 0.3rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-h);
+  cursor: pointer;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  object-fit: cover;
+}
+
+.triggerLabel {
+  max-width: 10rem;
+  overflow: hidden;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  right: 0;
+  display: grid;
+  min-width: 12rem;
+  padding: 0.35rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.email {
+  margin: 0;
+  padding: 0.4rem 0.6rem 0.6rem;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  font-size: 0.8rem;
+  text-overflow: ellipsis;
+}
+
+.item {
+  padding: 0.5rem 0.6rem;
+  border: 0;
+  border-radius: calc(var(--radius-md) - 0.2rem);
+  background: transparent;
+  color: var(--text-h);
+  font-size: 0.9rem;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.item:hover {
+  background: var(--surface-muted);
+}
+
+.item:disabled {
+  color: var(--text);
+  cursor: progress;
+}

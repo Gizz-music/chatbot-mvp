@@ -1,0 +1,106 @@
+.page {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1.25rem;
+  min-height: 0;
+}
+
+.page h1,
+.page h2 {
+  margin: 0 0 0.75rem;
+  color: var(--text-h);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+/* The knowledge base carries a table, so it gets the full row where the grid
+   has more than one column to give. */
+.wide {
+  grid-column: 1 / -1;
+}
+
+.bottom {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.chatCard,
+.embedCard,
+.dangerCard {
+  min-width: 0;
+}
+
+@media (min-width: 48rem) {
+  .bottom {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr);
+    align-items: stretch;
+  }
+
+  .chatCard,
+  .embedCard {
+    height: 100%;
+  }
+
+  .chatCard > :last-child,
+  .embedCard > :last-child {
+    flex: 1;
+    min-height: 0;
+  }
+
+  .chatCard > :last-child {
+    justify-content: space-between;
+  }
+
+  .dangerCard {
+    grid-column: 1 / -1;
+    justify-self: start;
+    width: min(20rem, 100%);
+  }
+}
+
+@media (min-width: 72rem) {
+  .bottom {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr) minmax(15rem, 0.72fr);
+  }
+
+  .dangerCard {
+    grid-column: auto;
+    justify-self: stretch;
+    width: auto;
+    align-self: start;
+  }
+}
+
+.sources {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  align-items: start;
+  margin-bottom: 1rem;
+}
+
+.meta {
+  margin: 0;
+  color: var(--text);
+}
+
+.code {
+  padding: 0.1rem 0.35rem;
+  border-radius: var(--radius-md);
+  background: var(--surface-muted);
+  font-size: 0.85rem;
+}
+
+.previewLink {
+  color: var(--accent);
+  font-weight: 600;
+}

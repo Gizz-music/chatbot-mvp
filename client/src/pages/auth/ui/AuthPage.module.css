@@ -1,0 +1,15 @@
+.page {
+  display: grid;
+  gap: 0.5rem;
+  max-width: 28rem;
+  padding-block: 3rem 4rem;
+}
+
+.title {
+  margin: 0;
+  color: var(--text-h);
+}
+
+.subtitle {
+  margin: 0 0 1rem;
+}

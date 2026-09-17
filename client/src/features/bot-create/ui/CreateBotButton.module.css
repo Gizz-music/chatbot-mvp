@@ -1,0 +1,18 @@
+.wrap {
+  display: grid;
+  gap: 0.45rem;
+  justify-items: start;
+}
+
+.hint {
+  display: grid;
+  gap: 0.15rem;
+  justify-items: start;
+  max-width: 18rem;
+  text-align: left;
+}
+
+.limit {
+  margin: 0;
+  font-size: 0.85rem;
+}

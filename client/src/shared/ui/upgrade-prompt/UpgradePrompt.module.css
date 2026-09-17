@@ -1,0 +1,59 @@
+.prompt {
+  display: grid;
+  gap: 0.2rem;
+  justify-items: start;
+}
+
+.title {
+  margin: 0;
+  color: var(--text-h);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.description {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.link {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.gate {
+  position: relative;
+}
+
+.dimmed {
+  filter: grayscale(0.35);
+  opacity: 0.55;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(2px);
+}
+
+.overlay .prompt {
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  justify-items: center;
+  text-align: center;
+}

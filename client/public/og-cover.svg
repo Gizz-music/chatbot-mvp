@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f6f7fb" />
+  <rect x="0" y="0" width="1200" height="8" fill="#4f46e5" />
+  <g transform="translate(96 200)">
+    <rect width="72" height="72" rx="18" fill="#4f46e5" />
+    <g fill="#fff">
+      <circle cx="24" cy="36" r="5" />
+      <circle cx="36" cy="36" r="5" />
+      <circle cx="48" cy="36" r="5" />
+    </g>
+  </g>
+  <text
+    x="96"
+    y="360"
+    font-family="Segoe UI, system-ui, sans-serif"
+    font-size="72"
+    font-weight="700"
+    fill="#12141a"
+  >
+    Chatbot Builder
+  </text>
+  <text
+    x="96"
+    y="424"
+    font-family="Segoe UI, system-ui, sans-serif"
+    font-size="34"
+    fill="#5b6170"
+  >
+    Embed an AI chat trained on your knowledge base
+  </text>
+</svg>
