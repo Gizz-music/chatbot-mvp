@@ -37,12 +37,7 @@ type GatedProps = {
  * Keeps gated UI visible (so the user sees what they would get) and covers it
  * with an upgrade overlay instead of hiding the controls.
  */
-export const Gated = ({
-  locked,
-  title,
-  description,
-  children,
-}: GatedProps) => {
+export const Gated = ({ locked, title, description, children }: GatedProps) => {
   if (!locked) {
     return children;
   }

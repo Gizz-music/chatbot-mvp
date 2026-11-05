@@ -65,6 +65,10 @@ const createConversation = async (
 
   failOn(error);
 
+  if (!data) {
+    throw new Error("Conversation was not created.");
+  }
+
   return data;
 };
 

@@ -31,26 +31,26 @@ export const DashboardSidebar = () => {
       </NavLink>
 
       {isPending ? null : (
-      <div className={styles.usage}>
-        <p className={styles.usageLabel}>Messages this month</p>
-        <p className={styles.usageCount}>
-          {used.toLocaleString("en-US")} / {cap.toLocaleString("en-US")}
-        </p>
-        <progress
-          aria-label="Message usage"
-          className={cx(styles.bar, exhausted && styles.barFull)}
-          max={1}
-          value={ratio}
-        />
-        {exhausted ? (
-          <div className={styles.upgrade}>
-            <p className={styles.limit}>{messageLimitMessage(plan)}</p>
-            <UpgradePrompt />
-          </div>
-        ) : (
-          <p className={styles.planName}>{plan.name} plan</p>
-        )}
-      </div>
+        <div className={styles.usage}>
+          <p className={styles.usageLabel}>Messages this month</p>
+          <p className={styles.usageCount}>
+            {used.toLocaleString("en-US")} / {cap.toLocaleString("en-US")}
+          </p>
+          <progress
+            aria-label="Message usage"
+            className={cx(styles.bar, exhausted && styles.barFull)}
+            max={1}
+            value={ratio}
+          />
+          {exhausted ? (
+            <div className={styles.upgrade}>
+              <p className={styles.limit}>{messageLimitMessage(plan)}</p>
+              <UpgradePrompt />
+            </div>
+          ) : (
+            <p className={styles.planName}>{plan.name} plan</p>
+          )}
+        </div>
       )}
     </aside>
   );

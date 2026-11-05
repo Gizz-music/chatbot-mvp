@@ -152,7 +152,10 @@ export const ChatWorkspace = ({
             </p>
           ) : null}
 
-          {source === "widget" && publicKey && conversationId && !leadCaptured ? (
+          {source === "widget" &&
+          publicKey &&
+          conversationId &&
+          !leadCaptured ? (
             <LeadCaptureForm
               conversationId={conversationId}
               onCaptured={() => {

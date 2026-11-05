@@ -103,6 +103,24 @@ The script reads the env values from `client/.env.local`, uploads the file, call
 
 `client/vercel.json` rewrites SPA routes to `index.html` while leaving `widget.html`, `embed.js` and the static assets untouched. `vite.config.ts` builds two entry points: the dashboard (`index.html`) and the widget iframe (`widget.html`).
 
+## CI
+
+Two GitHub Actions workflows live in `.github/workflows`.
+
+| Workflow | When | What it does |
+| --- | --- | --- |
+| CI | pull request, push to `master` | Prettier, ESLint, `tsc`, Vite build, `deno check` and `deno test` on the Edge Functions. A green push to `master` then runs `supabase db push --remote --yes` and `supabase functions deploy` when the Supabase secrets below are set. Without them the deploy job says so and the build stays green. |
+| AI review | pull request from this repository | Sends the diff to Gemini (`gemini-3.5-flash-lite`) and comments on the PR. The check fails only on a critical finding: a leaked secret, RLS removed, a quota bypass, or a widget allow-list that would accept a foreign host. The job never approves or merges. |
+
+The client still ships through Vercel's Git integration. Supabase deploy reads these Actions secrets:
+
+- `SUPABASE_ACCESS_TOKEN` — personal access token with read access to project settings and API keys
+- `SUPABASE_PROJECT_ID` — project ref
+- `SUPABASE_DB_PASSWORD`
+- `GEMINI_API_KEY` — AI review only; without it the job comments that the review was skipped and stays green
+
+Forks do not run the review job, so a pull request cannot read these secrets. The model only sees the diff, and a finding can be wrong: the type-check and the Deno tests are the gate, the comment is a signal to read the PR.
+
 ## Scripts
 
 Run from `client/`:

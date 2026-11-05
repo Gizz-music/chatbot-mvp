@@ -97,8 +97,7 @@ export const monthlyEquivalentOf = (plan: Plan): number =>
 export const comparePlans = (from: PlanId, to: PlanId): number =>
   PLAN_RANK[to] - PLAN_RANK[from];
 
-const megabytesOf = (bytes: number): string =>
-  `${Math.round(bytes / MB)} MB`;
+const megabytesOf = (bytes: number): string => `${Math.round(bytes / MB)} MB`;
 
 const countLabel = (count: number, noun: string): string =>
   count === 1 ? `1 ${noun}` : `${count.toLocaleString("en-US")} ${noun}s`;

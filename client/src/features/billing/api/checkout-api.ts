@@ -56,7 +56,10 @@ const toAppCheckoutUrl = (rawUrl: string): string => {
   }
 };
 
-const describeError = async (cause: unknown, fallback: string): Promise<string> => {
+const describeError = async (
+  cause: unknown,
+  fallback: string,
+): Promise<string> => {
   if (cause instanceof FunctionsHttpError) {
     const payload: unknown = await cause.context.json().catch(() => null);
 
@@ -144,7 +147,9 @@ export const readCheckoutSession = async (
   };
 };
 
-export const confirmCheckout = async (sessionId: string): Promise<CheckoutSession> => {
+export const confirmCheckout = async (
+  sessionId: string,
+): Promise<CheckoutSession> => {
   const payload = await invokeBilling({
     action: "confirm",
     sessionId,

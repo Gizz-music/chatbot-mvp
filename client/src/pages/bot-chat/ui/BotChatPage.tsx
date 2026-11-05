@@ -2,10 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Link, useParams } from "react-router-dom";
 
 import { botQueries } from "@/entities/bot";
-import {
-  messageLimitMessage,
-  useEntitlements,
-} from "@/entities/plan";
+import { messageLimitMessage, useEntitlements } from "@/entities/plan";
 import { ChatWorkspace } from "@/features/chat";
 import { ROUTES } from "@/shared/config/routes";
 import { Button } from "@/shared/ui/button";

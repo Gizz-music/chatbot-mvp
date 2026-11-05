@@ -74,7 +74,9 @@ export const fetchSubscription = async (): Promise<Subscription> => {
   return toSubscription(data);
 };
 
-export const fetchPlanUsage = async (): Promise<Pick<PlanUsage, "messages">> => {
+export const fetchPlanUsage = async (): Promise<
+  Pick<PlanUsage, "messages">
+> => {
   const { data, error } = await supabase
     .from("usage_counters")
     .select("messages_used")

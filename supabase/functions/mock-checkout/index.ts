@@ -1,4 +1,8 @@
-import { createClient, type User } from "npm:@supabase/supabase-js@2.116.0";
+import {
+  createClient,
+  type SupabaseClient,
+  type User,
+} from "npm:@supabase/supabase-js@2.116.0";
 
 import { corsHeaders as ingestCors, jsonResponse, messageOf, requireEnv } from "../ingest-document/http.ts";
 
@@ -124,7 +128,7 @@ const publicSessionOf = (session: CheckoutSession) => ({
 });
 
 const applyPlan = async (
-  admin: ReturnType<typeof createClient>,
+  admin: SupabaseClient,
   userId: string,
   plan: PlanId,
   interval: BillingInterval,
@@ -170,7 +174,7 @@ const SESSION_COLUMNS =
   "id, user_id, plan, billing_interval, amount_cents, success_url, cancel_url, status, expires_at";
 
 const loadOpenSession = async (
-  admin: ReturnType<typeof createClient>,
+  admin: SupabaseClient,
   sessionId: string,
 ): Promise<Response | CheckoutSession> => {
   const { data, error } = await admin

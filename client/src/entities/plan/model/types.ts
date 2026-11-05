@@ -3,15 +3,10 @@ export type PlanId = "free" | "pro" | "business";
 export type BillingInterval = "monthly" | "yearly";
 
 export type SubscriptionStatus =
-  | "active"
-  | "trialing"
-  | "past_due"
-  | "canceled";
+  "active" | "trialing" | "past_due" | "canceled";
 
 export type PlanFeature =
-  | "removeBranding"
-  | "widgetCustomization"
-  | "domainAllowlist";
+  "removeBranding" | "widgetCustomization" | "domainAllowlist";
 
 export type PlanResource = "bots" | "messages" | "documents";
 

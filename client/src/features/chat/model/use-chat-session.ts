@@ -211,13 +211,11 @@ export const useChatSession = ({
 
       setError(cause instanceof Error ? cause.message : "Chat failed.");
     } finally {
-      if (!isCurrent()) {
-        return;
+      if (isCurrent()) {
+        setIsStreaming(false);
+        abortRef.current = null;
+        setLive(null);
       }
-
-      setIsStreaming(false);
-      abortRef.current = null;
-      setLive(null);
     }
   };
 

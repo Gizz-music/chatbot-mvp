@@ -1,10 +1,6 @@
 import { queryOptions } from "@tanstack/react-query";
 
-import {
-  fetchInvoices,
-  fetchPlanUsage,
-  fetchSubscription,
-} from "./plan-api";
+import { fetchInvoices, fetchPlanUsage, fetchSubscription } from "./plan-api";
 
 export const planKeys = {
   all: ["plan"] as const,
